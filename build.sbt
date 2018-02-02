@@ -4,7 +4,7 @@ version := "2.1"
 
 organization := "org.programming-scala"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.12" // "2.11.7"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-async"     % "0.9.2",
@@ -35,3 +35,8 @@ javacOptions  ++= Seq(
 // Enable improved incremental compilation feature in 2.11.X.
 // see http://www.scala-lang.org/news/2.11.1
 incOptions := incOptions.value.withNameHashing(true)
+
+// sbteclipse Settings
+EclipseKeys.executionEnvironment := Some(EclipseExecutionEnvironment.JavaSE18)
+EclipseKeys.withSource := true
+EclipseKeys.withBundledScalaContainers := false
